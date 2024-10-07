@@ -16,10 +16,19 @@ struct AppetizerListView: View {
             NavigationView {
                 List(viewModel.appetizers, id: \.id) { item in
                     AppetizerListItemView(item: item)
+                        .onTapGesture {
+                        viewModel.select(item)
+                    }
                 }
+                .disabled(viewModel.isShowingDetails)
                 .navigationTitle("AppetizersTitle")
             }.onAppear {
                 viewModel.getAppetizers()
+            }
+            .blur(radius: viewModel.isShowingDetails ? 20 : 0)
+            
+            if let selected = viewModel.selected, viewModel.isShowingDetails {
+                AppetizerDetailsView(model: selected, isShowing: $viewModel.isShowingDetails)
             }
             if viewModel.isLoading {
                 LoadingView()

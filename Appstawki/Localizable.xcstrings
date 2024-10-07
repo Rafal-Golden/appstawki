@@ -61,6 +61,40 @@
         }
       }
     },
+    "Calories" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calories"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kalorie"
+          }
+        }
+      }
+    },
+    "Carbs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carbs"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Węgle"
+          }
+        }
+      }
+    },
     "HomeTab" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -79,7 +113,14 @@
       }
     },
     "Order" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamówienie"
+          }
+        }
+      }
     },
     "OrderTab" : {
       "extractionState" : "manual",
@@ -111,6 +152,23 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Twoje zamówienia"
+          }
+        }
+      }
+    },
+    "Protein" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protein"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Białka"
           }
         }
       }

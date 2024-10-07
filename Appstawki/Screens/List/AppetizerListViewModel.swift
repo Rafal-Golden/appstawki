@@ -12,12 +12,19 @@ final class AppetizerListViewModel: ObservableObject {
     let service: NetworkServiceProtocol
     
     @Published var appetizers: [AppetizerModel] = []
+    @Published var selected: AppetizerModel? = nil
     @Published var alertItem: AlertItem?
     @Published var isLoading: Bool
+    @Published var isShowingDetails: Bool = false
     
     init() {
         self.service = NetworkService()
         self.isLoading = false
+    }
+    
+    func select(_ item: AppetizerModel) {
+        self.selected = item
+        self.isShowingDetails = true
     }
     
     func getAppetizers() {
