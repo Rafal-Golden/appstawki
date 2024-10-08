@@ -9,7 +9,10 @@ import SwiftUI
 
 struct AppetizerDetailsView: View {
     
-    let model: AppetizerModel
+    var model: AppetizerModel {
+        viewModel.model
+    }
+    let viewModel: AppetizerDetailsViewModel
 
     @Binding var isShowing: Bool
     
@@ -38,7 +41,7 @@ struct AppetizerDetailsView: View {
                 .foregroundColor(.primary)
             
             
-            AppButton(title: "$\(model.price, specifier: "%.2f") - Add to Order") {
+            AppButton(title: viewModel.orderButtonTitle) {
                 // add
             }
         }
@@ -52,6 +55,6 @@ struct AppetizerDetailsView: View {
 }
 
 #Preview {
-    AppetizerDetailsView(model: MockData.sampleAppetizer, isShowing: .constant(false))
-        .environment(\.locale, Locale(identifier: "pl"))
+    AppetizerDetailsView(viewModel: MockData.sampleDetailsViewModel, isShowing: .constant(false))
+        .environment(\.locale, Locale(identifier: "pl_PL"))
 }

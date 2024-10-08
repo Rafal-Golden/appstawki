@@ -29,5 +29,12 @@ struct AppButton: View {
 }
 
 #Preview {
-    AppButton(title: "Buy my order", action: {})
+    Group {
+        AppButton(title: "\("12") AddToOrderTitle", action: {})
+            .previewDisplayName("Default Locale")
+            .environment(\.locale, Locale(identifier: "en_US"))
+        AppButton(title: "\("12") AddToOrderTitle", action: {})
+            .previewDisplayName("Polish Locale")
+            .environment(\.locale, Locale(identifier: "pl_PL"))
+    }
 }

@@ -28,7 +28,8 @@ struct AppetizerListView: View {
             .blur(radius: viewModel.isShowingDetails ? 20 : 0)
             
             if let selected = viewModel.selected, viewModel.isShowingDetails {
-                AppetizerDetailsView(model: selected, isShowing: $viewModel.isShowingDetails)
+                let selectedDetailsVM = AppetizerDetailsViewModel(model: selected)
+                AppetizerDetailsView(viewModel: selectedDetailsVM, isShowing: $viewModel.isShowingDetails)
             }
             if viewModel.isLoading {
                 LoadingView()
