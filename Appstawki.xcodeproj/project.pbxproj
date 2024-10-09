@@ -32,6 +32,8 @@
 		99915AD12CB4366400DE1FD9 /* ParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915AD02CB4366400DE1FD9 /* ParameterView.swift */; };
 		99915AD32CB575B600DE1FD9 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915AD22CB575B600DE1FD9 /* MockData.swift */; };
 		99915AD52CB577DE00DE1FD9 /* AppetizerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915AD42CB577DE00DE1FD9 /* AppetizerDetailsViewModel.swift */; };
+		99915AD72CB6C74000DE1FD9 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915AD62CB6C74000DE1FD9 /* AccountViewModel.swift */; };
+		99915AD92CB6E1F800DE1FD9 /* FormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915AD82CB6E1F800DE1FD9 /* FormItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		99915AD02CB4366400DE1FD9 /* ParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterView.swift; sourceTree = "<group>"; };
 		99915AD22CB575B600DE1FD9 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		99915AD42CB577DE00DE1FD9 /* AppetizerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppetizerDetailsViewModel.swift; path = Appstawki/Screens/List/Details/AppetizerDetailsViewModel.swift; sourceTree = SOURCE_ROOT; };
+		99915AD62CB6C74000DE1FD9 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		99915AD82CB6E1F800DE1FD9 /* FormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				99915AAF2CB00BD900DE1FD9 /* AccountView.swift */,
+				99915AD82CB6E1F800DE1FD9 /* FormItem.swift */,
+				99915AD62CB6C74000DE1FD9 /* AccountViewModel.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -375,6 +381,8 @@
 				99915AC02CB193C800DE1FD9 /* LoadingView.swift in Sources */,
 				99915ACB2CB41B8400DE1FD9 /* AppetizerDetailsView.swift in Sources */,
 				99915AB92CB1685E00DE1FD9 /* NetworkService.swift in Sources */,
+				99915AD72CB6C74000DE1FD9 /* AccountViewModel.swift in Sources */,
+				99915AD92CB6E1F800DE1FD9 /* FormItem.swift in Sources */,
 				99915AB02CB00BD900DE1FD9 /* AccountView.swift in Sources */,
 				99915AC42CB19DCD00DE1FD9 /* RemoteImage.swift in Sources */,
 				99915ABB2CB17A1300DE1FD9 /* AppetizerListViewModel.swift in Sources */,
