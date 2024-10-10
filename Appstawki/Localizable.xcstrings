@@ -150,6 +150,9 @@
     "Last name" : {
 
     },
+    "Name" : {
+
+    },
     "Order" : {
       "localizations" : {
         "pl" : {
@@ -220,7 +223,7 @@
     "Requests" : {
 
     },
-    "Save" : {
+    "save changes" : {
 
     }
   },

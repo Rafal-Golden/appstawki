@@ -9,7 +9,7 @@ import SwiftUI
 
 class AccountViewModel: ObservableObject {
     
-    @Published var title: LocalizedStringKey
+    var title: LocalizedStringKey
     @Published var firstSection: LocalizedStringKey
     @Published var firstName: TextItem
     @Published var lastName: TextItem
@@ -20,8 +20,10 @@ class AccountViewModel: ObservableObject {
     @Published var extraNapkins: CheckItem
     @Published var allYouCanDrink: CheckItem
     
-    @Published var saveChanges: LocalizedStringKey
+    @Published var saveChangesTitle: LocalizedStringKey
     @Published var saveNotAllowed: Bool
+    
+    @Published var alertItem: AlertItem?
     
     init() {
         self.title = "AccountTitle"
@@ -35,13 +37,22 @@ class AccountViewModel: ObservableObject {
         self.extraNapkins = CheckItem(name: "Extra napkins", value: false)
         self.allYouCanDrink = CheckItem(name: "All you can drink", value: false)
         
-        self.saveChanges = "save changes"
+        self.saveChangesTitle = "save changes"
         self.saveNotAllowed = true
     }
     
-    func isValid() -> Bool {
-        let valid = !firstName.value.isEmpty && !lastName.value.isEmpty && !email.value.isEmpty
+    var isValid: Bool {
+        var valid = !firstName.value.isEmpty && !lastName.value.isEmpty && !email.value.isEmpty
+        valid = valid && email.value.isValidEmail
         saveNotAllowed = !valid
         return valid
+    }
+    
+    func saveChanges() {
+        if isValid {
+            print("save changes executed")
+        } else {
+            alertItem = AlertContext.accountInvalidData
+        }
     }
 }

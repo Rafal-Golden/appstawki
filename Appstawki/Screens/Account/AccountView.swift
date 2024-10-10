@@ -25,10 +25,7 @@ struct AccountView: View {
                     Section(header: Text(viewModel.firstSection)) {
                         textField(item: viewModel.firstName)
                         textField(item: viewModel.lastName)
-                        textField(item: viewModel.email)
-                            .keyboardType(.emailAddress)
-                            .autocapitalization(.none)
-                            .autocorrectionDisabled()
+                        TextFieldEmailView(item: viewModel.email)
                         DatePicker(viewModel.birthday.name, selection: $viewModel.birthday.value, displayedComponents: .date)
                     }
                     
@@ -37,10 +34,13 @@ struct AccountView: View {
                         Toggle(viewModel.allYouCanDrink.name, isOn: $viewModel.allYouCanDrink.value)
                     }.toggleStyle(SwitchToggleStyle(tint: .brandPrimary))
                 }
-                AppButton(title: viewModel.saveChanges, action: {})
-                    .disabled(viewModel.saveNotAllowed)
+                AppButton(title: viewModel.saveChangesTitle, action: viewModel.saveChanges)
+                    .opacity(viewModel.saveNotAllowed ? 0.6 : 1.0)
             }
             .navigationTitle(viewModel.title)
+            .alert(item: $viewModel.alertItem) { item in
+                Alert(title: item.title, message: item.message, dismissButton: item.dismissButton)
+            }
         }
     }
 }
