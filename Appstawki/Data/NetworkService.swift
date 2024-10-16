@@ -7,25 +7,21 @@
 
 import UIKit
 
+
 protocol NetworkServiceProtocol {
-    func getAppetizers(completion: @escaping (Result<[AppetizerModel], NetworkService.AppError>) -> Void)
+    func getAppetizers(completion: @escaping (Result<[AppetizerModel], AppError>) -> Void)
     func downloadImage(url: URL, completion: @escaping (UIImage?) -> Void)
 }
 
 final class NetworkService: NetworkServiceProtocol {
     
-    let urlSession: URLSession
+    let urlSession: URLSessionProtocol
+    let queue: AppQueueProtocol
     let cache = NSCache<NSString, UIImage>()
     
-    init(urlSession: URLSession) {
+    init(urlSession: URLSessionProtocol, queue: AppQueueProtocol) {
         self.urlSession = urlSession
-    }
-    
-    enum AppError: Error {
-        case undefinedURL
-        case unableToComplete
-        case invalidData
-        case parsingFailed(Error)
+        self.queue = queue
     }
     
     private let baseURL = URL(string: "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/")
@@ -71,7 +67,7 @@ final class NetworkService: NetworkServiceProtocol {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { [weak self] data, _, _ in
+        let task = urlSession.dataTask(with: URLRequest(url: url)) { [weak self] data, _, _ in
             if let data, let image = UIImage(data: data) {
                 self?.cache.setObject(image, forKey: cacheKey)
                 completion(image)
@@ -86,7 +82,7 @@ final class NetworkService: NetworkServiceProtocol {
     
     func getAppetizers(completion: @escaping (Result<[AppetizerModel], AppError>) -> Void) {
         getAppetizersBG { result in
-            DispatchQueue.main.async {
+            self.queue.onMainAsync {
                 completion(result)
             }
         }
@@ -94,16 +90,10 @@ final class NetworkService: NetworkServiceProtocol {
     
     func downloadImage(url: URL, completion: @escaping (UIImage?) -> Void) {
         downloadImageBG(url: url) { image in
-            DispatchQueue.main.async {
+            self.queue.onMainAsync {
                 completion(image)
             }
         }
     }
     
-}
-
-extension NetworkService {
-    convenience init() {
-        self.init(urlSession: URLSession(configuration: .default))
-    }
 }

@@ -9,10 +9,12 @@ import SwiftUI
 
 struct AppetizerListView: View {
     
-    @StateObject var viewModel = AppetizerListViewModel()
+    @StateObject var viewModel: AppetizerListViewModel
     
     var body: some View {
         ZStack {
+            Color(.red)
+                .edgesIgnoringSafeArea(.all)
             NavigationView {
                 List(viewModel.appetizers, id: \.id) { item in
                     AppetizerListItemView(item: item)
@@ -40,3 +42,12 @@ struct AppetizerListView: View {
         }
     }
 }
+
+#Preview("Remote Service") {
+    AppetizerListView(viewModel: .init())
+}
+
+#Preview("Sample Service") {
+    AppetizerListView(viewModel: .sample(state: .success))
+}
+

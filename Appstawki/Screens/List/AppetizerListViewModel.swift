@@ -17,8 +17,8 @@ final class AppetizerListViewModel: ObservableObject {
     @Published var isLoading: Bool
     @Published var isShowingDetails: Bool = false
     
-    init() {
-        self.service = NetworkService()
+    init(service: NetworkServiceProtocol) {
+        self.service = service
         self.isLoading = false
     }
     
@@ -44,7 +44,7 @@ final class AppetizerListViewModel: ObservableObject {
         }
     }
     
-    func handle(error: NetworkService.AppError) {
+    func handle(error: AppError) {
         switch error {
             case .undefinedURL:
                 alertItem = AlertContext.invalidURL
@@ -55,5 +55,16 @@ final class AppetizerListViewModel: ObservableObject {
             case .parsingFailed(let error):
                 alertItem = AlertContext.Alert(with: error)
         }
+    }
+}
+
+extension AppetizerListViewModel {
+    convenience init() {
+        self.init(service: NetworkService())
+    }
+    
+    static func sample(state: NetworkServiceSample.State) -> Self {
+        let service = NetworkServiceSample(state: state)
+        return Self.init(service: service)
     }
 }

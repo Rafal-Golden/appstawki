@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct AppetizerModel: Decodable, Identifiable {
+struct AppetizerModel: Codable, Identifiable {
     let id: Int
     let name: String
     let description: String
@@ -29,7 +29,7 @@ extension AppetizerModel {
     }
 }
 
-struct AppetizerResponse: Decodable {
+struct AppetizerResponse: Codable {
     let request: [AppetizerModel]
 }
 

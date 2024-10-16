@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct AppetizerTabView: View {
+    
+    let module = AppModule()
+    
     var body: some View {
         TabView {
-            AppetizerListView()
+            AppetizerListView(viewModel: module.injectAppetizerListViewModel())
                 .tabItem {
                     Image(systemName: "house")
                     Text("HomeTab")

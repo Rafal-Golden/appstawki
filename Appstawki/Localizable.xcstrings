@@ -27,9 +27,6 @@
     "$%.2f" : {
 
     },
-    "121" : {
-
-    },
     "AccountTab" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -148,9 +145,6 @@
       }
     },
     "Last name" : {
-
-    },
-    "Name" : {
 
     },
     "Order" : {

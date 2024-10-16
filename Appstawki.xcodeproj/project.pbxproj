@@ -11,7 +11,7 @@
 		99915A842CB00A6200DE1FD9 /* AppetizerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915A832CB00A6200DE1FD9 /* AppetizerListView.swift */; };
 		99915A862CB00A6600DE1FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99915A852CB00A6600DE1FD9 /* Assets.xcassets */; };
 		99915A892CB00A6600DE1FD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99915A882CB00A6600DE1FD9 /* Preview Assets.xcassets */; };
-		99915A932CB00A6600DE1FD9 /* AppstawkiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915A922CB00A6600DE1FD9 /* AppstawkiTests.swift */; };
+		99915A932CB00A6600DE1FD9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915A922CB00A6600DE1FD9 /* NetworkServiceTests.swift */; };
 		99915A9D2CB00A6700DE1FD9 /* AppstawkiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915A9C2CB00A6700DE1FD9 /* AppstawkiUITests.swift */; };
 		99915A9F2CB00A6700DE1FD9 /* AppstawkiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915A9E2CB00A6700DE1FD9 /* AppstawkiUITestsLaunchTests.swift */; };
 		99915AAC2CB00AAE00DE1FD9 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915AAB2CB00AAE00DE1FD9 /* AppetizerTabView.swift */; };
@@ -36,6 +36,19 @@
 		99915AD92CB6E1F800DE1FD9 /* FormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915AD82CB6E1F800DE1FD9 /* FormItem.swift */; };
 		99915ADD2CB6E7CB00DE1FD9 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915ADC2CB6E7CB00DE1FD9 /* String+Extension.swift */; };
 		99915ADF2CB83B4000DE1FD9 /* TextFieldEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915ADE2CB83B4000DE1FD9 /* TextFieldEmailView.swift */; };
+		99915AE72CB92F7600DE1FD9 /* AppetizerListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99915AE62CB92F7600DE1FD9 /* AppetizerListViewTests.swift */; };
+		99915AEF2CB9316800DE1FD9 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 99915AEE2CB9316800DE1FD9 /* InlineSnapshotTesting */; };
+		99915AF12CB9316800DE1FD9 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 99915AF02CB9316800DE1FD9 /* SnapshotTesting */; };
+		99B0215D2CB9403100D135DE /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 99B0215C2CB9403100D135DE /* Nimble */; };
+		99DC3A0D2CB965BC0060E695 /* AppURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A0C2CB965BC0060E695 /* AppURLSession.swift */; };
+		99DC3A0F2CB9700E0060E695 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A0E2CB9700E0060E695 /* URLSessionMock.swift */; };
+		99DC3A112CB973600060E695 /* AppStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A102CB973600060E695 /* AppStubs.swift */; };
+		99DC3A142CBEAA430060E695 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A122CBEA92F0060E695 /* AppError.swift */; };
+		99DC3A1B2CBFBE7F0060E695 /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A1A2CBFBE7F0060E695 /* AppModule.swift */; };
+		99DC3A1E2CBFC3190060E695 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A0E2CB9700E0060E695 /* URLSessionMock.swift */; };
+		99DC3A202CBFC3550060E695 /* AppQueueMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A1F2CBFC3550060E695 /* AppQueueMock.swift */; };
+		99DC3A212CBFC38A0060E695 /* AppQueueMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A1F2CBFC3550060E695 /* AppQueueMock.swift */; };
+		99DC3A232CBFCB320060E695 /* NetworkService+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A222CBFCB320060E695 /* NetworkService+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +66,13 @@
 			remoteGlobalIDString = 99915A7D2CB00A6200DE1FD9;
 			remoteInfo = Appstawki;
 		};
+		99915AE82CB92F7600DE1FD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99915A762CB00A6200DE1FD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99915A7D2CB00A6200DE1FD9;
+			remoteInfo = Appstawki;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +82,7 @@
 		99915A852CB00A6600DE1FD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99915A882CB00A6600DE1FD9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		99915A8E2CB00A6600DE1FD9 /* AppstawkiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppstawkiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99915A922CB00A6600DE1FD9 /* AppstawkiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppstawkiTests.swift; sourceTree = "<group>"; };
+		99915A922CB00A6600DE1FD9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		99915A982CB00A6600DE1FD9 /* AppstawkiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppstawkiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99915A9C2CB00A6700DE1FD9 /* AppstawkiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppstawkiUITests.swift; sourceTree = "<group>"; };
 		99915A9E2CB00A6700DE1FD9 /* AppstawkiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppstawkiUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -88,6 +108,15 @@
 		99915AD82CB6E1F800DE1FD9 /* FormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItem.swift; sourceTree = "<group>"; };
 		99915ADC2CB6E7CB00DE1FD9 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		99915ADE2CB83B4000DE1FD9 /* TextFieldEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldEmailView.swift; sourceTree = "<group>"; };
+		99915AE42CB92F7600DE1FD9 /* SnapshotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapshotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99915AE62CB92F7600DE1FD9 /* AppetizerListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListViewTests.swift; sourceTree = "<group>"; };
+		99DC3A0C2CB965BC0060E695 /* AppURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURLSession.swift; sourceTree = "<group>"; };
+		99DC3A0E2CB9700E0060E695 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		99DC3A102CB973600060E695 /* AppStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStubs.swift; sourceTree = "<group>"; };
+		99DC3A122CBEA92F0060E695 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		99DC3A1A2CBFBE7F0060E695 /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
+		99DC3A1F2CBFC3550060E695 /* AppQueueMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppQueueMock.swift; sourceTree = "<group>"; };
+		99DC3A222CBFCB320060E695 /* NetworkService+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99B0215D2CB9403100D135DE /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +139,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99915AE12CB92F7600DE1FD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99915AEF2CB9316800DE1FD9 /* InlineSnapshotTesting in Frameworks */,
+				99915AF12CB9316800DE1FD9 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +160,7 @@
 				99915A802CB00A6200DE1FD9 /* Appstawki */,
 				99915A912CB00A6600DE1FD9 /* AppstawkiTests */,
 				99915A9B2CB00A6600DE1FD9 /* AppstawkiUITests */,
+				99915AE52CB92F7600DE1FD9 /* SnapshotsTests */,
 				99915A7F2CB00A6200DE1FD9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,6 +171,7 @@
 				99915A7E2CB00A6200DE1FD9 /* Appstawki.app */,
 				99915A8E2CB00A6600DE1FD9 /* AppstawkiTests.xctest */,
 				99915A982CB00A6600DE1FD9 /* AppstawkiUITests.xctest */,
+				99915AE42CB92F7600DE1FD9 /* SnapshotsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				99915A812CB00A6200DE1FD9 /* AppstawkiApp.swift */,
+				99DC3A192CBFBE700060E695 /* AppModule */,
 				99915AC52CB1A45A00DE1FD9 /* Screens */,
 				99915AC82CB404E100DE1FD9 /* Extensions */,
 				99915AB32CB0170700DE1FD9 /* Data */,
@@ -160,7 +202,9 @@
 		99915A912CB00A6600DE1FD9 /* AppstawkiTests */ = {
 			isa = PBXGroup;
 			children = (
-				99915A922CB00A6600DE1FD9 /* AppstawkiTests.swift */,
+				99915A922CB00A6600DE1FD9 /* NetworkServiceTests.swift */,
+				99DC3A162CBEAA780060E695 /* NetworkService */,
+				99DC3A102CB973600060E695 /* AppStubs.swift */,
 			);
 			path = AppstawkiTests;
 			sourceTree = "<group>";
@@ -177,7 +221,9 @@
 		99915AB32CB0170700DE1FD9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				99DC3A122CBEA92F0060E695 /* AppError.swift */,
 				99915AB82CB1685E00DE1FD9 /* NetworkService.swift */,
+				99DC3A0C2CB965BC0060E695 /* AppURLSession.swift */,
 				99915AB42CB0171B00DE1FD9 /* AppetizerModel.swift */,
 				99915AD22CB575B600DE1FD9 /* MockData.swift */,
 			);
@@ -233,6 +279,7 @@
 				99915ABD2CB18AC600DE1FD9 /* AlertContext.swift */,
 				99915AC12CB1956300DE1FD9 /* Color+Extension.swift */,
 				99915ADC2CB6E7CB00DE1FD9 /* String+Extension.swift */,
+				99DC3A222CBFCB320060E695 /* NetworkService+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -247,6 +294,31 @@
 				99915AD02CB4366400DE1FD9 /* ParameterView.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		99915AE52CB92F7600DE1FD9 /* SnapshotsTests */ = {
+			isa = PBXGroup;
+			children = (
+				99915AE62CB92F7600DE1FD9 /* AppetizerListViewTests.swift */,
+			);
+			path = SnapshotsTests;
+			sourceTree = "<group>";
+		};
+		99DC3A162CBEAA780060E695 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				99DC3A0E2CB9700E0060E695 /* URLSessionMock.swift */,
+				99DC3A1F2CBFC3550060E695 /* AppQueueMock.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		99DC3A192CBFBE700060E695 /* AppModule */ = {
+			isa = PBXGroup;
+			children = (
+				99DC3A1A2CBFBE7F0060E695 /* AppModule.swift */,
+			);
+			path = AppModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +377,28 @@
 			productReference = 99915A982CB00A6600DE1FD9 /* AppstawkiUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		99915AE32CB92F7600DE1FD9 /* SnapshotsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99915AEA2CB92F7600DE1FD9 /* Build configuration list for PBXNativeTarget "SnapshotsTests" */;
+			buildPhases = (
+				99915AE02CB92F7600DE1FD9 /* Sources */,
+				99915AE12CB92F7600DE1FD9 /* Frameworks */,
+				99915AE22CB92F7600DE1FD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99915AE92CB92F7600DE1FD9 /* PBXTargetDependency */,
+			);
+			name = SnapshotsTests;
+			packageProductDependencies = (
+				99915AEE2CB9316800DE1FD9 /* InlineSnapshotTesting */,
+				99915AF02CB9316800DE1FD9 /* SnapshotTesting */,
+			);
+			productName = SnapshotsTests;
+			productReference = 99915AE42CB92F7600DE1FD9 /* SnapshotsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -326,6 +420,10 @@
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 99915A7D2CB00A6200DE1FD9;
 					};
+					99915AE32CB92F7600DE1FD9 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 99915A7D2CB00A6200DE1FD9;
+					};
 				};
 			};
 			buildConfigurationList = 99915A792CB00A6200DE1FD9 /* Build configuration list for PBXProject "Appstawki" */;
@@ -338,6 +436,10 @@
 				pl,
 			);
 			mainGroup = 99915A752CB00A6200DE1FD9;
+			packageReferences = (
+				99915AED2CB9316800DE1FD9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				99B0215B2CB9403100D135DE /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = 99915A7F2CB00A6200DE1FD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -345,6 +447,7 @@
 				99915A7D2CB00A6200DE1FD9 /* Appstawki */,
 				99915A8D2CB00A6600DE1FD9 /* AppstawkiTests */,
 				99915A972CB00A6600DE1FD9 /* AppstawkiUITests */,
+				99915AE32CB92F7600DE1FD9 /* SnapshotsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -374,6 +477,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		99915AE22CB92F7600DE1FD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -386,6 +496,7 @@
 				99915AB52CB0171B00DE1FD9 /* AppetizerModel.swift in Sources */,
 				99915AC02CB193C800DE1FD9 /* LoadingView.swift in Sources */,
 				99915ACB2CB41B8400DE1FD9 /* AppetizerDetailsView.swift in Sources */,
+				99DC3A1B2CBFBE7F0060E695 /* AppModule.swift in Sources */,
 				99915AB92CB1685E00DE1FD9 /* NetworkService.swift in Sources */,
 				99915AD72CB6C74000DE1FD9 /* AccountViewModel.swift in Sources */,
 				99915AD92CB6E1F800DE1FD9 /* FormItem.swift in Sources */,
@@ -394,14 +505,17 @@
 				99915ABB2CB17A1300DE1FD9 /* AppetizerListViewModel.swift in Sources */,
 				99915ACD2CB4345700DE1FD9 /* AppButton.swift in Sources */,
 				99915ADD2CB6E7CB00DE1FD9 /* String+Extension.swift in Sources */,
+				99DC3A232CBFCB320060E695 /* NetworkService+Extension.swift in Sources */,
 				99915AD52CB577DE00DE1FD9 /* AppetizerDetailsViewModel.swift in Sources */,
 				99915AC22CB1956300DE1FD9 /* Color+Extension.swift in Sources */,
 				99915AAC2CB00AAE00DE1FD9 /* AppetizerTabView.swift in Sources */,
 				99915A842CB00A6200DE1FD9 /* AppetizerListView.swift in Sources */,
+				99DC3A142CBEAA430060E695 /* AppError.swift in Sources */,
 				99915AD32CB575B600DE1FD9 /* MockData.swift in Sources */,
 				99915A822CB00A6200DE1FD9 /* AppstawkiApp.swift in Sources */,
 				99915ACF2CB434AE00DE1FD9 /* CloseButton.swift in Sources */,
 				99915AB22CB00BFA00DE1FD9 /* OrderView.swift in Sources */,
+				99DC3A0D2CB965BC0060E695 /* AppURLSession.swift in Sources */,
 				99915ADF2CB83B4000DE1FD9 /* TextFieldEmailView.swift in Sources */,
 				99915AD12CB4366400DE1FD9 /* ParameterView.swift in Sources */,
 			);
@@ -411,7 +525,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99915A932CB00A6600DE1FD9 /* AppstawkiTests.swift in Sources */,
+				99DC3A0F2CB9700E0060E695 /* URLSessionMock.swift in Sources */,
+				99DC3A202CBFC3550060E695 /* AppQueueMock.swift in Sources */,
+				99915A932CB00A6600DE1FD9 /* NetworkServiceTests.swift in Sources */,
+				99DC3A112CB973600060E695 /* AppStubs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +538,16 @@
 			files = (
 				99915A9D2CB00A6700DE1FD9 /* AppstawkiUITests.swift in Sources */,
 				99915A9F2CB00A6700DE1FD9 /* AppstawkiUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99915AE02CB92F7600DE1FD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99DC3A1E2CBFC3190060E695 /* URLSessionMock.swift in Sources */,
+				99DC3A212CBFC38A0060E695 /* AppQueueMock.swift in Sources */,
+				99915AE72CB92F7600DE1FD9 /* AppetizerListViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +563,11 @@
 			isa = PBXTargetDependency;
 			target = 99915A7D2CB00A6200DE1FD9 /* Appstawki */;
 			targetProxy = 99915A992CB00A6600DE1FD9 /* PBXContainerItemProxy */;
+		};
+		99915AE92CB92F7600DE1FD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 99915A7D2CB00A6200DE1FD9 /* Appstawki */;
+			targetProxy = 99915AE82CB92F7600DE1FD9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -693,6 +825,50 @@
 			};
 			name = Release;
 		};
+		99915AEB2CB92F7600DE1FD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y4KBF2M4M7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nm2.rafi.SnapshotsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Appstawki.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Appstawki";
+			};
+			name = Debug;
+		};
+		99915AEC2CB92F7600DE1FD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y4KBF2M4M7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nm2.rafi.SnapshotsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Appstawki.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Appstawki";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -732,7 +908,53 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		99915AEA2CB92F7600DE1FD9 /* Build configuration list for PBXNativeTarget "SnapshotsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99915AEB2CB92F7600DE1FD9 /* Debug */,
+				99915AEC2CB92F7600DE1FD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		99915AED2CB9316800DE1FD9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.17.5;
+			};
+		};
+		99B0215B2CB9403100D135DE /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99915AEE2CB9316800DE1FD9 /* InlineSnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99915AED2CB9316800DE1FD9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = InlineSnapshotTesting;
+		};
+		99915AF02CB9316800DE1FD9 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99915AED2CB9316800DE1FD9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		99B0215C2CB9403100D135DE /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99B0215B2CB9403100D135DE /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 99915A762CB00A6200DE1FD9 /* Project object */;
 }
