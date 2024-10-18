@@ -17,11 +17,12 @@ final class NetworkService: NetworkServiceProtocol {
     
     let urlSession: URLSessionProtocol
     let queue: AppQueueProtocol
-    let cache = NSCache<NSString, UIImage>()
+    let cache: ImageCacheProtocol
     
-    init(urlSession: URLSessionProtocol, queue: AppQueueProtocol) {
+    init(urlSession: URLSessionProtocol, queue: AppQueueProtocol, cache: ImageCacheProtocol) {
         self.urlSession = urlSession
         self.queue = queue
+        self.cache = cache
     }
     
     private let baseURL = URL(string: "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/")
@@ -60,16 +61,16 @@ final class NetworkService: NetworkServiceProtocol {
     
     private func downloadImageBG(url: URL, completion: @escaping (UIImage?) -> Void) {
         
-        let cacheKey = NSString(string: url.absoluteString)
+        let cacheKey = url.absoluteString
         
-        if let image = cache.object(forKey: cacheKey) {
+        if let image = cache.getImage(forKey: cacheKey) {
             completion(image)
             return
         }
         
         let task = urlSession.dataTask(with: URLRequest(url: url)) { [weak self] data, _, _ in
             if let data, let image = UIImage(data: data) {
-                self?.cache.setObject(image, forKey: cacheKey)
+                self?.cache.setImage(image, forKey: cacheKey)
                 completion(image)
             } else {
                 completion(nil)

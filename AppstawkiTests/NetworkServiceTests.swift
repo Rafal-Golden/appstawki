@@ -15,13 +15,15 @@ final class NetworkServiceTests: XCTestCase {
     
     var sessionMock: URLSessionMock!
     var queueMock: AppQueueMock!
+    var imageCacheMock: ImageCacheMock!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         
         sessionMock = URLSessionMock()
         queueMock = AppQueueMock()
-        sut = NetworkService(urlSession: sessionMock, queue: queueMock)
+        imageCacheMock = ImageCacheMock()
+        sut = NetworkService(urlSession: sessionMock, queue: queueMock, cache: imageCacheMock)
     }
 
     override func tearDownWithError() throws {

@@ -11,7 +11,7 @@ import UIKit
 extension NetworkService {
     convenience init() {
         let session = URLSession(configuration: .default)
-        self.init(urlSession: session, queue: AppQueue())
+        self.init(urlSession: session, queue: AppQueue(), cache: ImageCache())
     }
 }
 
@@ -34,7 +34,7 @@ class NetworkServiceSample: NetworkServiceProtocol {
                 let appetizers = MockData.appetizers
                 completion(.success(appetizers))
             case .failed:
-                completion(.failure(AppError.invalidData))
+                completion(.failure(AppError.unableToComplete))
         }
     }
     

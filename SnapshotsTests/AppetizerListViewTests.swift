@@ -5,9 +5,9 @@
 //  Created by Rafal Korzynski on 11/10/2024.
 //
 
-import SnapshotTesting
 import XCTest
 import SwiftUI
+import SnapshotTesting
 
 @testable import Appstawki
 
@@ -26,6 +26,9 @@ final class AppetizerListViewTests: XCTestCase {
         let viewModel = AppetizerListViewModel(service: service)
         let view = AppetizerListView(viewModel: viewModel)
         sut = UIHostingController(rootView: view)
+        
+        sut.overrideUserInterfaceStyle = .light
+        sut.view.layoutIfNeeded()
     }
 
     override func tearDownWithError() throws {
@@ -34,23 +37,23 @@ final class AppetizerListViewTests: XCTestCase {
 
     func test_AppetizerListViewIsLoading() throws {
         makeSUT(state: .loading)
-        assertSnapshots(of: sut, as: [.image])
+        assertSnapshots(of: sut, as: [.image(on: .iPhoneSe(.portrait))] )
     }
     
     func test_AppetizerListViewLoadedData() throws {
         makeSUT(state: .success)
-        assertSnapshots(of: sut, as: [.image])
+        assertSnapshots(of: sut, as: [.image(on: .iPhoneSe(.portrait))] )
     }
     
     func test_AppetizerListViewLoadingFailed() throws {
         makeSUT(state: .failed)
         
         let expectation = XCTestExpectation(description: "Wait for Alert to appear")
-        DispatchQueue.main.asyncAfter(deadline: .now()+1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now()+2.0) {
             expectation.fulfill()
         }
         wait(for: [expectation])
         
-        assertSnapshots(of: sut, as: [.image])
+        assertSnapshots(of: sut, as: [.image(on: .iPhoneSe(.portrait))] )
     }
 }
