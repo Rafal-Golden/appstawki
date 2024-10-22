@@ -52,6 +52,9 @@
 		99DC3A2A2CBFE8420060E695 /* ImageCacheMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A282CBFE8420060E695 /* ImageCacheMock.swift */; };
 		99DC3A2D2CC6E8A90060E695 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A2C2CC6E8A90060E695 /* User.swift */; };
 		99DC3A2F2CC6E8F10060E695 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A2E2CC6E8F10060E695 /* UserStorage.swift */; };
+		99DC3A312CC833FD0060E695 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A302CC833FD0060E695 /* EmptyStateView.swift */; };
+		99DC3A332CC8398C0060E695 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A322CC8398C0060E695 /* Order.swift */; };
+		99DC3A352CC83FE50060E695 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A342CC83FE50060E695 /* CurrencyFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +119,9 @@
 		99DC3A282CBFE8420060E695 /* ImageCacheMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheMock.swift; sourceTree = "<group>"; };
 		99DC3A2C2CC6E8A90060E695 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		99DC3A2E2CC6E8F10060E695 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		99DC3A302CC833FD0060E695 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		99DC3A322CC8398C0060E695 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		99DC3A342CC83FE50060E695 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,7 +267,10 @@
 		99915AC72CB1A49100DE1FD9 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				99DC3A342CC83FE50060E695 /* CurrencyFormatter.swift */,
+				99DC3A322CC8398C0060E695 /* Order.swift */,
 				99915AB12CB00BFA00DE1FD9 /* OrderView.swift */,
+				99DC3A302CC833FD0060E695 /* EmptyStateView.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -465,7 +474,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				99915ABE2CB18AC600DE1FD9 /* AlertContext.swift in Sources */,
+				99DC3A352CC83FE50060E695 /* CurrencyFormatter.swift in Sources */,
 				99915AB72CB01F4D00DE1FD9 /* AppetizerListItemView.swift in Sources */,
+				99DC3A332CC8398C0060E695 /* Order.swift in Sources */,
 				99915AB52CB0171B00DE1FD9 /* AppetizerModel.swift in Sources */,
 				99915AC02CB193C800DE1FD9 /* LoadingView.swift in Sources */,
 				99DC3A272CBFE5C80060E695 /* ImageCacheProtocol.swift in Sources */,
@@ -486,6 +497,7 @@
 				99915AC22CB1956300DE1FD9 /* Color+Extension.swift in Sources */,
 				99915AAC2CB00AAE00DE1FD9 /* AppetizerTabView.swift in Sources */,
 				99915A842CB00A6200DE1FD9 /* AppetizerListView.swift in Sources */,
+				99DC3A312CC833FD0060E695 /* EmptyStateView.swift in Sources */,
 				99DC3A142CBEAA430060E695 /* AppError.swift in Sources */,
 				99915AD32CB575B600DE1FD9 /* MockData.swift in Sources */,
 				99915A822CB00A6200DE1FD9 /* AppstawkiApp.swift in Sources */,

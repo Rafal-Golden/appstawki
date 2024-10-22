@@ -22,10 +22,8 @@ struct AppetizerModel: Codable, Identifiable {
 extension AppetizerModel {
     
     var priceWithCurrency: String {
-       let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.locale = .current
-        return formatter.string(from: NSNumber(value: price)) ?? "\(price)"
+        let formatter = CurrencyFormatter()
+        return formatter.string(from: price)
     }
 }
 

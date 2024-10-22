@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ - Order placed" : {
+
+    },
     "%@ AddToOrderTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19,12 +22,6 @@
       }
     },
     "%lld" : {
-
-    },
-    "🧾" : {
-
-    },
-    "$%.2f" : {
 
     },
     "AccountTab" : {
@@ -148,6 +145,7 @@
 
     },
     "Order" : {
+      "extractionState" : "stale",
       "localizations" : {
         "pl" : {
           "stringUnit" : {
@@ -187,6 +185,23 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Twoje zamówienia"
+          }
+        }
+      }
+    },
+    "OrderViewEmptyMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We don't have any data for your order. When you add order it will be visible here."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Narazie nie mamy żadnego zamówienia. Kiedy dodasz swój zakup zobaczysz go tutaj."
           }
         }
       }

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct AppetizerDetailsView: View {
     
-    var model: AppetizerModel {
+    @EnvironmentObject var order: Order
+    
+    var item: AppetizerModel {
         viewModel.model
     }
     let viewModel: AppetizerDetailsViewModel
@@ -18,23 +20,23 @@ struct AppetizerDetailsView: View {
     
     var body: some View {
         VStack {
-            AppRemoteImage(url: model.imageURL)
+            AppRemoteImage(url: item.imageURL)
                 .aspectRatio(contentMode: .fit)
                 .background(Color.gray)
                 .frame(maxWidth: .infinity)
             
             VStack {
-                Text(model.name)
+                Text(item.name)
                     .font(.title2)
                     .fontWeight(.semibold)
-                Text(model.description)
+                Text(item.description)
                     .multilineTextAlignment(.center)
                     .font(.body)
                     .padding()
                 HStack(spacing: 20) {
-                    ParameterView(name: "Calories", value: "\(model.calories)")
-                    ParameterView(name: "Carbs", value: "\(model.carbs)")
-                    ParameterView(name: "Proitein", value: "\(model.protein)")
+                    ParameterView(name: "Calories", value: "\(item.calories)")
+                    ParameterView(name: "Carbs", value: "\(item.carbs)")
+                    ParameterView(name: "Proitein", value: "\(item.protein)")
                 }
             }
                 .padding()
@@ -42,7 +44,8 @@ struct AppetizerDetailsView: View {
             
             
             AppButton(title: viewModel.orderButtonTitle) {
-                // add
+                order.add(item)
+                isShowing = false
             }
         }
         //.frame(width: UIScreen.main.bounds.width * 0.8)

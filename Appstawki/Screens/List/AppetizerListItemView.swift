@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct AppetizerListItemView: View {
-    
+        
     let item: AppetizerModel
     
     var body: some View {
@@ -21,7 +21,7 @@ struct AppetizerListItemView: View {
                 Text(item.name)
                     .font(.title2)
                     .fontWeight(.medium)
-                Text("$\(item.price, specifier: "%.2f")")
+                Text(item.priceWithCurrency)
                     .foregroundColor(.secondary)
                     .fontWeight(.regular)
                 //Text("\(item.imageURL)")

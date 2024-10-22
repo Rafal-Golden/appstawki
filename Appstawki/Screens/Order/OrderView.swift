@@ -8,12 +8,28 @@
 import SwiftUI
 
 struct OrderView: View {
+    
+    @EnvironmentObject var userOrder: Order
+    
     var body: some View {
         NavigationView {
-            VStack(spacing: 16) {
-                Text("🧾")
-                    .font(.largeTitle)
-                Text("Order")
+            ZStack {
+                VStack(spacing: 16) {
+                    List {
+                        ForEach(userOrder.items) { orderItem in
+                            AppetizerListItemView(item: orderItem)
+                        }.onDelete(perform: userOrder.deleteItems)
+                    }
+                    .listStyle(.plain)
+                    
+                    AppButton(title: "\(userOrder.totalPriceString) - Order placed") {
+                        print("do action")
+                    }
+                    .padding(.bottom, 25)
+                }
+                if userOrder.isEmpty {
+                    EmptyStateView(imageName: "basket", message: "OrderViewEmptyMessage")
+                }
             }
             .navigationTitle("OrderTitle")
         }

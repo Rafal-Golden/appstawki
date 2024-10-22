@@ -9,22 +9,15 @@ import SwiftUI
 
 
 final class AppetizerDetailsViewModel: ObservableObject {
-    let model: AppetizerModel
     
-    var localCurrencyFormatter: NumberFormatter {
-        let formatter = NumberFormatter()
-         formatter.numberStyle = .currency
-         formatter.locale = .current
-        return formatter
-    }
+    let model: AppetizerModel
     
     init(model: AppetizerModel) {
         self.model = model
     }
     
     var orderButtonTitle: LocalizedStringKey {
-        let price = NSNumber(value: model.price)
-        let priceWithCurrency = localCurrencyFormatter.string(from: price) ?? "\(price)"
-        return LocalizedStringKey("\(priceWithCurrency) AddToOrderTitle")
+        let localPrice = model.priceWithCurrency
+        return LocalizedStringKey("\(localPrice) AddToOrderTitle")
     }
 }
