@@ -14,7 +14,7 @@ struct AppetizerListView: View {
     var body: some View {
         ZStack {
             Color(.red)
-                .edgesIgnoringSafeArea(.all)
+                .ignoresSafeArea()
             NavigationView {
                 List(viewModel.appetizers, id: \.id) { item in
                     AppetizerListItemView(item: item)
