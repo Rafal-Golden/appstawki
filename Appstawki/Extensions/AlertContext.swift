@@ -20,6 +20,9 @@ struct AlertContext {
     
     static let accountInvalidData = Alert(title: "Invalid personal data", message: "Please make sure you fullfiled form with all personal info.", buttonTitle: "OK")
     
+    static let userSavedSuccess = Alert(title: "User saved", message: "User data saved successfuly.", buttonTitle: "OK")
+    static let userSavedFailure = Alert(title: "User saved", message: "Sorry! But user data could not be saved successfuly.", buttonTitle: "OK")
+    
     static func Alert(with error: Error) -> AlertItem {
         Alert(title: "Server error", message: "JSON Parsing error \(error)", buttonTitle: "OK")
     }

@@ -39,7 +39,6 @@ final class AppetizerListViewModel: ObservableObject {
                 case .failure(let error):
                     self?.appetizers = []
                     self?.handle(error: error)
-                    print("Error \(error)")
             }
         }
     }

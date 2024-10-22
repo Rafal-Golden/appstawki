@@ -32,12 +32,16 @@ struct AccountView: View {
                     Section(header: Text(viewModel.secondSection)) {
                         Toggle(viewModel.extraNapkins.name, isOn: $viewModel.extraNapkins.value)
                         Toggle(viewModel.allYouCanDrink.name, isOn: $viewModel.allYouCanDrink.value)
+                            .id(viewModel.fieldsUpdated)
                     }.toggleStyle(SwitchToggleStyle(tint: .brandPrimary))
                 }
                 AppButton(title: viewModel.saveChangesTitle, action: viewModel.saveChanges)
                     .opacity(viewModel.saveNotAllowed ? 0.6 : 1.0)
             }
             .navigationTitle(viewModel.title)
+            .onAppear {
+                viewModel.load()
+            }
             .alert(item: $viewModel.alertItem) { item in
                 Alert(title: item.title, message: item.message, dismissButton: item.dismissButton)
             }
