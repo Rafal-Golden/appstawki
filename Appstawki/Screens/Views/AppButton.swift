@@ -17,24 +17,28 @@ struct AppButton: View {
             action()
         } label: {
             Text(title)
-                .font(.title3)
-                .fontWeight(.semibold)
-                .padding(20)
-                .frame(maxWidth: .infinity)
-                .foregroundColor(.white)
-                .background(Color.appPrimary)
-                .cornerRadius(10)
         }.padding(20)
+    }
+    
+    func largeStyle() -> some View {
+        self.buttonStyle(AppButtonLargeStyle())
+    }
+    
+    func simpleStyle() -> some View {
+        self.modifier(AppButtonSimpleStyle())
     }
 }
 
-#Preview {
+#Preview("Button Styles") {
     Group {
         AppButton(title: "\("12") AddToOrderTitle", action: {})
-            .previewDisplayName("Default Locale")
+            .largeStyle()
             .environment(\.locale, Locale(identifier: "en_US"))
         AppButton(title: "\("12") AddToOrderTitle", action: {})
-            .previewDisplayName("Polish Locale")
+            .simpleStyle()
+            .environment(\.locale, Locale(identifier: "pl_PL"))
+        AppButton(title: "\("12") AddToOrderTitle", action: {})
+            .largeStyle()
             .environment(\.locale, Locale(identifier: "pl_PL"))
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct AppetizerTabView: View {
     
     let module = AppModule()
+    @EnvironmentObject var order: Order
     
     var body: some View {
         TabView {
@@ -20,14 +21,11 @@ struct AppetizerTabView: View {
                 }
             AccountView()
                 .tabItem {
-                    Image(systemName: "person")
-                    Text("AccountTab")
+                    Label("AccouontTab", systemImage: "person")
                 }
             OrderView()
-                .tabItem {
-                    Image(systemName: "bag")
-                    Text("OrderTab")
-                }
+                .tabItem { Label("OrderTab", systemImage: "bag") }
+                .badge(order.items.count)
         }
         .accentColor(Color("BrandPrimary"))
     }

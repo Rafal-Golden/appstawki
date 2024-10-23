@@ -18,6 +18,7 @@ struct AppetizerListView: View {
             NavigationView {
                 List(viewModel.appetizers, id: \.id) { item in
                     AppetizerListItemView(item: item)
+                        .listRowSeparator(.hidden)
                         .onTapGesture {
                         viewModel.select(item)
                     }

@@ -47,8 +47,8 @@ struct AppetizerDetailsView: View {
                 order.add(item)
                 isShowing = false
             }
+            .simpleStyle()
         }
-        //.frame(width: UIScreen.main.bounds.width * 0.8)
         .background(Color(.systemBackground))
         .cornerRadius(12)
         .shadow(radius: 20)

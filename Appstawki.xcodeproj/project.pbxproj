@@ -55,6 +55,7 @@
 		99DC3A312CC833FD0060E695 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A302CC833FD0060E695 /* EmptyStateView.swift */; };
 		99DC3A332CC8398C0060E695 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A322CC8398C0060E695 /* Order.swift */; };
 		99DC3A352CC83FE50060E695 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A342CC83FE50060E695 /* CurrencyFormatter.swift */; };
+		99DC3A382CC91D200060E695 /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A372CC91D200060E695 /* CustomModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		99DC3A302CC833FD0060E695 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		99DC3A322CC8398C0060E695 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		99DC3A342CC83FE50060E695 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		99DC3A372CC91D200060E695 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				99915AAB2CB00AAE00DE1FD9 /* AppetizerTabView.swift */,
+				99DC3A392CC9240C0060E695 /* Enviroment */,
+				99DC3A362CC91CFA0060E695 /* Views */,
 				99915ABC2CB17A1C00DE1FD9 /* List */,
 				99915AC62CB1A48400DE1FD9 /* Account */,
 				99915AC72CB1A49100DE1FD9 /* Order */,
@@ -267,8 +271,6 @@
 		99915AC72CB1A49100DE1FD9 /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				99DC3A342CC83FE50060E695 /* CurrencyFormatter.swift */,
-				99DC3A322CC8398C0060E695 /* Order.swift */,
 				99915AB12CB00BFA00DE1FD9 /* OrderView.swift */,
 				99DC3A302CC833FD0060E695 /* EmptyStateView.swift */,
 			);
@@ -291,7 +293,6 @@
 			children = (
 				99915AD42CB577DE00DE1FD9 /* AppetizerDetailsViewModel.swift */,
 				99915ACA2CB41B8400DE1FD9 /* AppetizerDetailsView.swift */,
-				99915ACC2CB4345700DE1FD9 /* AppButton.swift */,
 				99915ACE2CB434AE00DE1FD9 /* CloseButton.swift */,
 				99915AD02CB4366400DE1FD9 /* ParameterView.swift */,
 			);
@@ -331,6 +332,24 @@
 				99DC3A2C2CC6E8A90060E695 /* User.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		99DC3A362CC91CFA0060E695 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				99915ACC2CB4345700DE1FD9 /* AppButton.swift */,
+				99DC3A372CC91D200060E695 /* CustomModifiers.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		99DC3A392CC9240C0060E695 /* Enviroment */ = {
+			isa = PBXGroup;
+			children = (
+				99DC3A342CC83FE50060E695 /* CurrencyFormatter.swift */,
+				99DC3A322CC8398C0060E695 /* Order.swift */,
+			);
+			path = Enviroment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,6 +515,7 @@
 				99915AD52CB577DE00DE1FD9 /* AppetizerDetailsViewModel.swift in Sources */,
 				99915AC22CB1956300DE1FD9 /* Color+Extension.swift in Sources */,
 				99915AAC2CB00AAE00DE1FD9 /* AppetizerTabView.swift in Sources */,
+				99DC3A382CC91D200060E695 /* CustomModifiers.swift in Sources */,
 				99915A842CB00A6200DE1FD9 /* AppetizerListView.swift in Sources */,
 				99DC3A312CC833FD0060E695 /* EmptyStateView.swift in Sources */,
 				99DC3A142CBEAA430060E695 /* AppError.swift in Sources */,

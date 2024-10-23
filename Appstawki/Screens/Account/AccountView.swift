@@ -36,6 +36,7 @@ struct AccountView: View {
                     }.toggleStyle(SwitchToggleStyle(tint: .brandPrimary))
                 }
                 AppButton(title: viewModel.saveChangesTitle, action: viewModel.saveChanges)
+                    .simpleStyle()
                     .opacity(viewModel.saveNotAllowed ? 0.6 : 1.0)
             }
             .navigationTitle(viewModel.title)

@@ -25,7 +25,7 @@ struct OrderView: View {
                     AppButton(title: "\(userOrder.totalPriceString) - Order placed") {
                         print("do action")
                     }
-                    .padding(.bottom, 25)
+                    .largeStyle()
                 }
                 if userOrder.isEmpty {
                     EmptyStateView(imageName: "basket", message: "OrderViewEmptyMessage")
