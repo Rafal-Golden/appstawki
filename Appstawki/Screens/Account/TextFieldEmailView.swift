@@ -28,8 +28,8 @@ struct TextFieldEmailView: View {
 }
 
 #Preview {
-    let item = TextItem(name: "Name", value: "")
-    return TextFieldEmailView(item: item)
+    let item = TextItem(name: "Name", value: "", id: .email)
+    TextFieldEmailView(item: item)
         .padding()
         .border(.blue)
 }

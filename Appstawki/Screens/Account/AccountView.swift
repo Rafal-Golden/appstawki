@@ -11,11 +11,16 @@ struct AccountView: View {
     
     @StateObject var viewModel = AccountViewModel()
     
+    @FocusState private var focusedTextField: TextItem.ID?
+    
     private func textField(item: TextItem) -> some View {
-        TextField(item.name, text: Binding (
+        let textField = TextField(item.name, text: Binding (
             get: { item.value },
             set: { item.value = $0 }
         ))
+        return textField.focused($focusedTextField, equals: item.id)
+            .onSubmit { focusedTextField = item.id.next }
+            .submitLabel(item.id.next != nil ? .next : .continue)
     }
     
     var body: some View {
@@ -26,6 +31,8 @@ struct AccountView: View {
                         textField(item: viewModel.firstName)
                         textField(item: viewModel.lastName)
                         TextFieldEmailView(item: viewModel.email)
+                            .focused($focusedTextField, equals: .email)
+                            .onSubmit { focusedTextField = viewModel.email.id.next }
                         DatePicker(viewModel.birthday.name, selection: $viewModel.birthday.value, displayedComponents: .date)
                     }
                     
@@ -40,6 +47,11 @@ struct AccountView: View {
                     .opacity(viewModel.saveNotAllowed ? 0.6 : 1.0)
             }
             .navigationTitle(viewModel.title)
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Button("Done") { focusedTextField = nil }
+                }
+            }
             .onAppear {
                 viewModel.load()
             }
@@ -49,6 +61,7 @@ struct AccountView: View {
         }
     }
 }
+
 
 #Preview {
     AccountView()

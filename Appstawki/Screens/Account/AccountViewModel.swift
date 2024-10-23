@@ -36,9 +36,9 @@ class AccountViewModel: ObservableObject {
     init() {
         self.title = "AccountTitle"
         self.firstSection = "Personal info:"
-        self.firstName = TextItem(name: "First name", value: "")
-        self.lastName = TextItem(name: "Last name", value: "")
-        self.email = TextItem(name: "Email addres", value: "")
+        self.firstName = TextItem(name: "First name", value: "", id: .firstName)
+        self.lastName = TextItem(name: "Last name", value: "", id: .lastName)
+        self.email = TextItem(name: "Email addres", value: "", id: .email)
         self.birthday = DateItem(name: "Birthday")
         
         self.secondSection = "Requests"
