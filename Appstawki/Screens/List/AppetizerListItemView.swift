@@ -27,7 +27,7 @@ struct AppetizerListItemView: View {
                 //Text("\(item.imageURL)")
             }
             .padding(.leading)
-        }
+        }.background(.clear)
     }
 }
 

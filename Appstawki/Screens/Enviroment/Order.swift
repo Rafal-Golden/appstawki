@@ -20,6 +20,11 @@ final class Order: ObservableObject {
         items.remove(atOffsets: offsets)
     }
     
+    func sentToExecution() {
+        print("order sent to execution!")
+        items.removeAll()
+    }
+    
     var isEmpty: Bool {
         items.isEmpty
     }

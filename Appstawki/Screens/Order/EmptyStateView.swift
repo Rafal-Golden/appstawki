@@ -13,7 +13,7 @@ struct EmptyStateView: View {
     
     var body: some View {
         ZStack {
-            Color(.systemBackground)
+            Color(.appBackground)
                 .ignoresSafeArea()
             VStack {
                 Image(systemName: imageName)

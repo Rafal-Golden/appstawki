@@ -28,11 +28,13 @@ struct AccountView: View {
             VStack {
                 Form {
                     Section(header: Text(viewModel.firstSection)) {
-                        textField(item: viewModel.firstName)
-                        textField(item: viewModel.lastName)
-                        TextFieldEmailView(item: viewModel.email)
-                            .focused($focusedTextField, equals: .email)
-                            .onSubmit { focusedTextField = viewModel.email.id.next }
+                        TextFieldGroup {
+                            textField(item: viewModel.firstName)
+                            textField(item: viewModel.lastName)
+                            TextFieldEmailView(item: viewModel.email)
+                                .focused($focusedTextField, equals: .email)
+                                .onSubmit { focusedTextField = viewModel.email.id.next }
+                        }
                         DatePicker(viewModel.birthday.name, selection: $viewModel.birthday.value, displayedComponents: .date)
                     }
                     
@@ -62,6 +64,38 @@ struct AccountView: View {
     }
 }
 
+struct AccountTextField: View {
+    @StateObject var item: TextItem
+    
+    var body: some View {
+        TextField(item.name, text: Binding (
+            get: { item.value },
+            set: { item.value = $0 }
+        ))
+    }
+}
+
+struct AccountTextFieldModifier: ViewModifier {
+    
+    func body(content: Content) -> some View {
+        content.background()
+    }
+}
+
+struct TextFieldGroup<Content: View>: View {
+    
+    @FocusState private var focusedTextField: TextItem.ID?
+    
+    let content: Content
+    
+    init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
+    
+    var body: some View {
+        content
+    }
+}
 
 #Preview {
     AccountView()

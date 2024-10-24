@@ -2,7 +2,20 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@ - Order placed" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ - Order placed"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ - Złóż zamówienie"
+          }
+        }
+      }
     },
     "%@ AddToOrderTitle" : {
       "extractionState" : "manual",
@@ -59,10 +72,34 @@
       }
     },
     "AccouontTab" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konto"
+          }
+        }
+      }
+    },
+    "Add Order" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj Zamówienie"
+          }
+        }
+      }
     },
     "All you can drink" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Picie bez limitu"
+          }
+        }
+      }
     },
     "AppetizersTitle" : {
       "extractionState" : "manual",
@@ -82,7 +119,14 @@
       }
     },
     "Birthday" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Urodziny"
+          }
+        }
+      }
     },
     "Calories" : {
       "extractionState" : "manual",
@@ -119,16 +163,44 @@
       }
     },
     "Done" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gotowe"
+          }
+        }
+      }
     },
     "Email addres" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adres Email"
+          }
+        }
+      }
     },
     "Extra napkins" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodatkowe ręczniczki"
+          }
+        }
+      }
     },
     "First name" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imię"
+          }
+        }
+      }
     },
     "HomeTab" : {
       "extractionState" : "manual",
@@ -148,15 +220,11 @@
       }
     },
     "Last name" : {
-
-    },
-    "Order" : {
-      "extractionState" : "stale",
       "localizations" : {
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zamówienie"
+            "value" : "Nawisko"
           }
         }
       }
@@ -213,7 +281,14 @@
       }
     },
     "Personal info:" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dane personalne:"
+          }
+        }
+      }
     },
     "Proitein" : {
 
@@ -239,7 +314,14 @@
 
     },
     "save changes" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zapisz zmiany"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
