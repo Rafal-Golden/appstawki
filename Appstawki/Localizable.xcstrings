@@ -290,9 +290,6 @@
         }
       }
     },
-    "Proitein" : {
-
-    },
     "Protein" : {
       "extractionState" : "manual",
       "localizations" : {

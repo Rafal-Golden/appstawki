@@ -43,6 +43,34 @@ final class AppetizerListViewModel: ObservableObject {
         }
     }
     
+    func getAppetizersTask() {
+        isLoading = true
+        
+        Task { [weak self] in
+            do {
+                let appetizers = try await self?.service.getAppetizersAsync()
+                self?.setAppetizersMain(appetizers ?? [])
+            } catch let error {
+                let appError = error as? AppError ?? .unableToComplete
+                self?.setHandlerMain(appError)
+            }
+        }
+    }
+    
+    private func setAppetizersMain(_ appetisers: [AppetizerModel]) {        
+        DispatchQueue.main.async { [weak self] in
+            self?.isLoading = false
+            self?.appetizers = appetisers
+        }
+    }
+    
+    private func setHandlerMain(_ error: AppError) {
+        DispatchQueue.main.async { [weak self] in
+            self?.isLoading = false
+            self?.handle(error: error)
+        }
+    }
+    
     func handle(error: AppError) {
         switch error {
             case .undefinedURL:

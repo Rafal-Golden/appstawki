@@ -38,6 +38,11 @@
 		99915AEF2CB9316800DE1FD9 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 99915AEE2CB9316800DE1FD9 /* InlineSnapshotTesting */; };
 		99915AF12CB9316800DE1FD9 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 99915AF02CB9316800DE1FD9 /* SnapshotTesting */; };
 		99B0215D2CB9403100D135DE /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 99B0215C2CB9403100D135DE /* Nimble */; };
+		99B8E12A2CCA94CB0020B9F8 /* ServiceConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8E1292CCA94CB0020B9F8 /* ServiceConfigProtocol.swift */; };
+		99B8E12C2CCA959D0020B9F8 /* ServiceConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8E12B2CCA959D0020B9F8 /* ServiceConfigTests.swift */; };
+		99B8E12E2CCA9B1B0020B9F8 /* ServiceConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8E12D2CCA9B1B0020B9F8 /* ServiceConfigMock.swift */; };
+		99B8E12F2CCA9B1B0020B9F8 /* ServiceConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8E12D2CCA9B1B0020B9F8 /* ServiceConfigMock.swift */; };
+		99B8E1312CCAA9320020B9F8 /* NetworkServiceModernTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8E1302CCAA9320020B9F8 /* NetworkServiceModernTests.swift */; };
 		99DC3A0D2CB965BC0060E695 /* AppURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A0C2CB965BC0060E695 /* AppURLSession.swift */; };
 		99DC3A0F2CB9700E0060E695 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A0E2CB9700E0060E695 /* URLSessionMock.swift */; };
 		99DC3A112CB973600060E695 /* AppStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A102CB973600060E695 /* AppStubs.swift */; };
@@ -109,6 +114,10 @@
 		99915ADE2CB83B4000DE1FD9 /* TextFieldEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldEmailView.swift; sourceTree = "<group>"; };
 		99915AE42CB92F7600DE1FD9 /* SnapshotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapshotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99915AE62CB92F7600DE1FD9 /* AppetizerListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListViewTests.swift; sourceTree = "<group>"; };
+		99B8E1292CCA94CB0020B9F8 /* ServiceConfigProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfigProtocol.swift; sourceTree = "<group>"; };
+		99B8E12B2CCA959D0020B9F8 /* ServiceConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfigTests.swift; sourceTree = "<group>"; };
+		99B8E12D2CCA9B1B0020B9F8 /* ServiceConfigMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfigMock.swift; sourceTree = "<group>"; };
+		99B8E1302CCAA9320020B9F8 /* NetworkServiceModernTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceModernTests.swift; sourceTree = "<group>"; };
 		99DC3A0C2CB965BC0060E695 /* AppURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURLSession.swift; sourceTree = "<group>"; };
 		99DC3A0E2CB9700E0060E695 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		99DC3A102CB973600060E695 /* AppStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStubs.swift; sourceTree = "<group>"; };
@@ -202,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				99915A922CB00A6600DE1FD9 /* NetworkServiceTests.swift */,
+				99B8E1302CCAA9320020B9F8 /* NetworkServiceModernTests.swift */,
+				99B8E12B2CCA959D0020B9F8 /* ServiceConfigTests.swift */,
 				99DC3A162CBEAA780060E695 /* NetworkService */,
 				99DC3A102CB973600060E695 /* AppStubs.swift */,
 			);
@@ -220,8 +231,9 @@
 		99915AB32CB0170700DE1FD9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				99DC3A122CBEA92F0060E695 /* AppError.swift */,
 				99915AB82CB1685E00DE1FD9 /* NetworkService.swift */,
+				99B8E1292CCA94CB0020B9F8 /* ServiceConfigProtocol.swift */,
+				99DC3A122CBEA92F0060E695 /* AppError.swift */,
 				99DC3A0C2CB965BC0060E695 /* AppURLSession.swift */,
 				99DC3A262CBFE5C80060E695 /* ImageCacheProtocol.swift */,
 				99915AB42CB0171B00DE1FD9 /* AppetizerModel.swift */,
@@ -310,6 +322,7 @@
 		99DC3A162CBEAA780060E695 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				99B8E12D2CCA9B1B0020B9F8 /* ServiceConfigMock.swift */,
 				99DC3A282CBFE8420060E695 /* ImageCacheMock.swift */,
 				99DC3A0E2CB9700E0060E695 /* URLSessionMock.swift */,
 				99DC3A1F2CBFC3550060E695 /* AppQueueMock.swift */,
@@ -512,6 +525,7 @@
 				99915ACD2CB4345700DE1FD9 /* AppButton.swift in Sources */,
 				99915ADD2CB6E7CB00DE1FD9 /* String+Extension.swift in Sources */,
 				99DC3A232CBFCB320060E695 /* NetworkService+Extension.swift in Sources */,
+				99B8E12A2CCA94CB0020B9F8 /* ServiceConfigProtocol.swift in Sources */,
 				99915AD52CB577DE00DE1FD9 /* AppetizerDetailsViewModel.swift in Sources */,
 				99915AC22CB1956300DE1FD9 /* Color+Extension.swift in Sources */,
 				99915AAC2CB00AAE00DE1FD9 /* AppetizerTabView.swift in Sources */,
@@ -534,10 +548,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				99DC3A2A2CBFE8420060E695 /* ImageCacheMock.swift in Sources */,
+				99B8E12E2CCA9B1B0020B9F8 /* ServiceConfigMock.swift in Sources */,
 				99DC3A0F2CB9700E0060E695 /* URLSessionMock.swift in Sources */,
 				99DC3A202CBFC3550060E695 /* AppQueueMock.swift in Sources */,
 				99915A932CB00A6600DE1FD9 /* NetworkServiceTests.swift in Sources */,
+				99B8E1312CCAA9320020B9F8 /* NetworkServiceModernTests.swift in Sources */,
 				99DC3A112CB973600060E695 /* AppStubs.swift in Sources */,
+				99B8E12C2CCA959D0020B9F8 /* ServiceConfigTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99DC3A292CBFE8420060E695 /* ImageCacheMock.swift in Sources */,
+				99B8E12F2CCA9B1B0020B9F8 /* ServiceConfigMock.swift in Sources */,
 				99DC3A1E2CBFC3190060E695 /* URLSessionMock.swift in Sources */,
 				99DC3A212CBFC38A0060E695 /* AppQueueMock.swift in Sources */,
 				99915AE72CB92F7600DE1FD9 /* AppetizerListViewTests.swift in Sources */,

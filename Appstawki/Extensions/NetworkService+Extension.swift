@@ -11,7 +11,7 @@ import UIKit
 extension NetworkService {
     convenience init() {
         let session = URLSession(configuration: .default)
-        self.init(urlSession: session, queue: AppQueue(), cache: ImageCache())
+        self.init(urlSession: session, queue: AppQueue(), cache: ImageCache(), config: ServiceConfig())
     }
 }
 
@@ -40,5 +40,9 @@ class NetworkServiceSample: NetworkServiceProtocol {
     
     func downloadImage(url: URL, completion: @escaping (UIImage?) -> Void) {
         completion(UIImage(systemName: "photo.artframe"))
+    }
+    
+    func getAppetizersAsync() async throws -> [AppetizerModel] {
+        return []
     }
 }

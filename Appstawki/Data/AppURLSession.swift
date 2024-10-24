@@ -13,6 +13,9 @@ protocol AppQueueProtocol {
 }
 protocol URLSessionProtocol {
     func dataTask(with request: URLRequest, completionHandler: @escaping @Sendable (Data?, URLResponse?, (any Error)?) -> Void) -> URLSessionDataTask
+    func data(from url: URL,
+              delegate: (any URLSessionTaskDelegate)?
+    ) async throws -> (Data, URLResponse)
 }
 
 extension URLSession: URLSessionProtocol {}

@@ -9,6 +9,7 @@ import XCTest
 import Nimble
 @testable import Appstawki
 
+
 final class NetworkServiceTests: XCTestCase {
 
     var sut: NetworkServiceProtocol!
@@ -16,6 +17,7 @@ final class NetworkServiceTests: XCTestCase {
     var sessionMock: URLSessionMock!
     var queueMock: AppQueueMock!
     var imageCacheMock: ImageCacheMock!
+    var serviceConfigMock: ServiceConfigMock!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -23,7 +25,8 @@ final class NetworkServiceTests: XCTestCase {
         sessionMock = URLSessionMock()
         queueMock = AppQueueMock()
         imageCacheMock = ImageCacheMock()
-        sut = NetworkService(urlSession: sessionMock, queue: queueMock, cache: imageCacheMock)
+        serviceConfigMock = ServiceConfigMock()
+        sut = NetworkService(urlSession: sessionMock, queue: queueMock, cache: imageCacheMock, config: serviceConfigMock)
     }
 
     override func tearDownWithError() throws {
@@ -31,6 +34,8 @@ final class NetworkServiceTests: XCTestCase {
         
         queueMock = nil
         sessionMock = nil
+        imageCacheMock = nil
+        serviceConfigMock = nil
         sut = nil
     }
     
@@ -40,10 +45,11 @@ final class NetworkServiceTests: XCTestCase {
         
         expect(self.sessionMock.dataTask.wasResumeCalled).to(beTrue())
         expect(self.sessionMock.isCompletionCalled).to(beTrue())
+        expect(self.serviceConfigMock.pathURLCalled).to(beTrue())
     }
     
     func test_getAppetizersFailsDataTaskReturnsErrorUnableToComplete() throws {
-        sessionMock.returnedError = NSError(domain: "StubUnitTest", code: 404)
+        sessionMock.returnedError = AppStubs.NSErrors.failsWith404
         let expectedError = setupExpected(error: .unableToComplete, response: .response200)
         var returnedError: AppError?
         
@@ -57,6 +63,22 @@ final class NetworkServiceTests: XCTestCase {
         
         expect(self.sessionMock.dataTask.wasResumeCalled).to(beTrue())
         expect(self.sessionMock.isCompletionCalled).to(beTrue())
+    }
+    
+    func test_getAppetizersFailsAndReturnsErrorUndefinedURL() throws {
+        sessionMock.returnedError = AppStubs.NSErrors.failsWith404
+        serviceConfigMock.pathURLReturnedURL = nil
+        let expectedError = setupExpected(error: .undefinedURL, response: .response200)
+        
+        var returnedError: AppError?
+        
+        sut.getAppetizers { result in
+            if case .failure(let error) = result {
+                returnedError = error
+            }
+        }
+        
+        expect(returnedError).to(equal(expectedError))
     }
 
     func test_getAppetizersSuccessReturnsArray() throws {
@@ -78,7 +100,7 @@ final class NetworkServiceTests: XCTestCase {
     }
     
     func setupExpected(error: AppError?,
-                       response: AppStubs.AppetizerModels.StubURLResponse?) -> AppError? {
+                       response: AppStubs.URLResponseStubs?) -> AppError? {
         sessionMock.returnedData = AppStubs.AppetizerModels.appetizerData()
         sessionMock.returnedResponse = response
         return error
@@ -139,5 +161,43 @@ final class NetworkServiceTests: XCTestCase {
         }
         
         expect(returnedImage).toNot(beNil())
+    }
+    
+    func test_getAppetizersAsyncCallsSession() async throws {
+        
+        var appetisers: [AppetizerModel]?
+        var expectedError: AppError?
+        do {
+            appetisers = try await sut.getAppetizersAsync()
+        } catch let error {
+            expectedError = error as? AppError
+        }
+        
+        expect(expectedError).to(equal(AppError.unableToComplete))
+        expect(appetisers).to(beNil())
+        expect(self.sessionMock.dataTask.wasResumeCalled).to(beFalse())
+        expect(self.sessionMock.isCompletionCalled).to(beTrue())
+    }
+    
+    func test_getAppetizersAsyncReturnsOnMainThread() async throws {
+        
+        let appetisers = try? await sut.getAppetizersAsync()
+        
+        expect(Thread.isMainThread).to(beFalse())
+    }
+    
+    func test_getAppetizersAsyncFailsAndReturnsError() async throws {
+        sessionMock.returnedError = AppStubs.NSErrors.failsWith404
+        serviceConfigMock.pathURLReturnedURL = nil
+        let expectedError = setupExpected(error: .undefinedURL, response: .response200)
+        var returnedError: AppError?
+        
+        do {
+            let _ = try await sut.getAppetizersAsync()
+        } catch let error {
+            returnedError = error as? AppError
+        }
+        
+        expect(returnedError).to(equal(expectedError))
     }
 }

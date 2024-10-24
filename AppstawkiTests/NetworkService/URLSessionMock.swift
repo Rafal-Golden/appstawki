@@ -33,4 +33,17 @@ final class URLSessionMock: URLSessionProtocol {
         
         return dataTask
     }
+    
+    func data(from url: URL,
+              delegate: (any URLSessionTaskDelegate)? = nil
+    ) async throws -> (Data, URLResponse) {
+        isCompletionCalled = true
+        if let returnedError {
+            throw returnedError
+        }
+        if let data = returnedData, let response = returnedResponse {
+            return (data, response)
+        }
+        return (Data(), URLResponse())
+    }
 }

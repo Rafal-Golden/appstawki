@@ -11,6 +11,8 @@ import UIKit
 protocol NetworkServiceProtocol {
     func getAppetizers(completion: @escaping (Result<[AppetizerModel], AppError>) -> Void)
     func downloadImage(url: URL, completion: @escaping (UIImage?) -> Void)
+    
+    func getAppetizersAsync() async throws -> [AppetizerModel]
 }
 
 final class NetworkService: NetworkServiceProtocol {
@@ -18,17 +20,17 @@ final class NetworkService: NetworkServiceProtocol {
     let urlSession: URLSessionProtocol
     let queue: AppQueueProtocol
     let cache: ImageCacheProtocol
+    let config: ServiceConfigProtocol
     
-    init(urlSession: URLSessionProtocol, queue: AppQueueProtocol, cache: ImageCacheProtocol) {
+    init(urlSession: URLSessionProtocol, queue: AppQueueProtocol, cache: ImageCacheProtocol, config: ServiceConfigProtocol) {
         self.urlSession = urlSession
         self.queue = queue
         self.cache = cache
+        self.config = config
     }
     
-    private let baseURL = URL(string: "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/")
-    
     private func getAppetizersBG(completion: @escaping (Result<[AppetizerModel], AppError>) -> Void) {
-        guard let requestURL = baseURL?.appending(component: "appetizers") else {
+        guard let requestURL = config.pathURL(endpoint: "appetizers") else {
             completion(.failure(.undefinedURL))
             return
         }
@@ -37,6 +39,7 @@ final class NetworkService: NetworkServiceProtocol {
         let task = urlSession.dataTask(with: request) { data, response, error in
             if error != nil {
                 completion(.failure(.unableToComplete))
+                return
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { completion(.failure(.unableToComplete))
@@ -97,4 +100,25 @@ final class NetworkService: NetworkServiceProtocol {
         }
     }
     
+    func getAppetizersAsync() async throws -> [AppetizerModel] {
+        guard let requestURL = config.pathURL(endpoint: "appetizers") else {
+            throw AppError.undefinedURL
+        }
+        
+        let (data, response) = try await urlSession.data(from: requestURL, delegate: nil)
+ 
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw AppError.unableToComplete
+        }
+            
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
+        
+        do {
+            let appetizerResponse = try decoder.decode(AppetizerResponse.self, from: data)
+            return appetizerResponse.request
+        } catch let error {
+            throw AppError.parsingFailed(error)
+        }
+    }
 }

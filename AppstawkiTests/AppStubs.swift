@@ -42,17 +42,6 @@ struct AppStubs {
         
         static let appetizerResponse = AppetizerResponse(request: appetizers)
         
-        class StubURLResponse: HTTPURLResponse {
-            
-            convenience init?(statusCode: Int) {
-                self.init(url: URL(string: "https://")!, statusCode: statusCode, httpVersion: "1.0", headerFields: nil)
-            }
-            
-            static var response200: StubURLResponse? {
-                StubURLResponse(statusCode: 200)
-            }
-        }
-        
         static func appetizerURLResponse() -> HTTPURLResponse? {
             return HTTPURLResponse(url: URL(string: "https://")!, statusCode: 200, httpVersion: "1.0", headerFields: nil)
         }
@@ -67,5 +56,24 @@ struct AppStubs {
             }
             return nil
         }
+    }
+    
+    class URLResponseStubs: HTTPURLResponse {
+        
+        convenience init?(statusCode: Int) {
+            self.init(url: URL(string: "https://")!, statusCode: statusCode, httpVersion: "1.0", headerFields: nil)
+        }
+        
+        static var response200: URLResponseStubs? {
+            URLResponseStubs(statusCode: 200)
+        }
+    }
+    
+    class NSErrors: NSError {
+        
+        convenience init(code: Int) {
+            self.init(domain: "StubUnitTest", code: code)
+        }
+        static let failsWith404 = NSErrors(code: 404)
     }
 }
