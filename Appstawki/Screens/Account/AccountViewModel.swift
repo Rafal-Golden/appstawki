@@ -9,20 +9,6 @@ import SwiftUI
 import Combine
 
 
-extension Date {
-    var oneHundredTenYearsAgo: Date {
-        yearsAgo(passed: 110)
-    }
-    
-    var eightTeenYearsAgo: Date {
-        yearsAgo(passed: 18)
-    }
-    
-    func yearsAgo(passed: Int) -> Date {
-        Calendar.current.date(byAdding: .year, value: -passed, to: self) ?? self
-    }
-}
-
 class AccountViewModel: ObservableObject {
     
     var title: LocalizedStringKey
