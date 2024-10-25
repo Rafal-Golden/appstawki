@@ -9,6 +9,20 @@ import SwiftUI
 import Combine
 
 
+extension Date {
+    var oneHundredTenYearsAgo: Date {
+        yearsAgo(passed: 110)
+    }
+    
+    var eightTeenYearsAgo: Date {
+        yearsAgo(passed: 18)
+    }
+    
+    func yearsAgo(passed: Int) -> Date {
+        Calendar.current.date(byAdding: .year, value: -passed, to: self) ?? self
+    }
+}
+
 class AccountViewModel: ObservableObject {
     
     var title: LocalizedStringKey
@@ -21,6 +35,7 @@ class AccountViewModel: ObservableObject {
     var lastName: TextItem
     var email: TextItem
     var birthday: DateItem
+    var birthdayRange: ClosedRange<Date>
     
     var secondSection: LocalizedStringKey
     var extraNapkins: CheckItem
@@ -40,6 +55,7 @@ class AccountViewModel: ObservableObject {
         self.lastName = TextItem(name: "Last name", value: "", id: .lastName)
         self.email = TextItem(name: "Email addres", value: "", id: .email)
         self.birthday = DateItem(name: "Birthday")
+        self.birthdayRange = Date().oneHundredTenYearsAgo...Date().eightTeenYearsAgo
         
         self.secondSection = "Requests"
         self.extraNapkins = CheckItem(name: "Extra napkins", value: false)

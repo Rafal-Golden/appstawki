@@ -43,6 +43,8 @@
 		99B8E12E2CCA9B1B0020B9F8 /* ServiceConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8E12D2CCA9B1B0020B9F8 /* ServiceConfigMock.swift */; };
 		99B8E12F2CCA9B1B0020B9F8 /* ServiceConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8E12D2CCA9B1B0020B9F8 /* ServiceConfigMock.swift */; };
 		99B8E1312CCAA9320020B9F8 /* NetworkServiceModernTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8E1302CCAA9320020B9F8 /* NetworkServiceModernTests.swift */; };
+		99B8E1382CCBC7690020B9F8 /* AccountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8E1372CCBC7690020B9F8 /* AccountTextField.swift */; };
+		99B8E1412CCC107E0020B9F8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8E1402CCC107E0020B9F8 /* Date+Extension.swift */; };
 		99DC3A0D2CB965BC0060E695 /* AppURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A0C2CB965BC0060E695 /* AppURLSession.swift */; };
 		99DC3A0F2CB9700E0060E695 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A0E2CB9700E0060E695 /* URLSessionMock.swift */; };
 		99DC3A112CB973600060E695 /* AppStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC3A102CB973600060E695 /* AppStubs.swift */; };
@@ -118,6 +120,8 @@
 		99B8E12B2CCA959D0020B9F8 /* ServiceConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfigTests.swift; sourceTree = "<group>"; };
 		99B8E12D2CCA9B1B0020B9F8 /* ServiceConfigMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfigMock.swift; sourceTree = "<group>"; };
 		99B8E1302CCAA9320020B9F8 /* NetworkServiceModernTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceModernTests.swift; sourceTree = "<group>"; };
+		99B8E1372CCBC7690020B9F8 /* AccountTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTextField.swift; sourceTree = "<group>"; };
+		99B8E1402CCC107E0020B9F8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		99DC3A0C2CB965BC0060E695 /* AppURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURLSession.swift; sourceTree = "<group>"; };
 		99DC3A0E2CB9700E0060E695 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		99DC3A102CB973600060E695 /* AppStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStubs.swift; sourceTree = "<group>"; };
@@ -272,9 +276,9 @@
 			isa = PBXGroup;
 			children = (
 				99915AAF2CB00BD900DE1FD9 /* AccountView.swift */,
-				99915ADE2CB83B4000DE1FD9 /* TextFieldEmailView.swift */,
-				99915AD82CB6E1F800DE1FD9 /* FormItem.swift */,
 				99915AD62CB6C74000DE1FD9 /* AccountViewModel.swift */,
+				99915AD82CB6E1F800DE1FD9 /* FormItem.swift */,
+				99915ADE2CB83B4000DE1FD9 /* TextFieldEmailView.swift */,
 				99DC3A2B2CC6E89A0060E695 /* Storage */,
 			);
 			path = Account;
@@ -292,6 +296,7 @@
 		99915AC82CB404E100DE1FD9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				99B8E1402CCC107E0020B9F8 /* Date+Extension.swift */,
 				99915ABD2CB18AC600DE1FD9 /* AlertContext.swift */,
 				99915AC12CB1956300DE1FD9 /* Color+Extension.swift */,
 				99915ADC2CB6E7CB00DE1FD9 /* String+Extension.swift */,
@@ -352,6 +357,7 @@
 			children = (
 				99915ACC2CB4345700DE1FD9 /* AppButton.swift */,
 				99DC3A372CC91D200060E695 /* CustomModifiers.swift */,
+				99B8E1372CCBC7690020B9F8 /* AccountTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				99915AB72CB01F4D00DE1FD9 /* AppetizerListItemView.swift in Sources */,
 				99DC3A332CC8398C0060E695 /* Order.swift in Sources */,
 				99915AB52CB0171B00DE1FD9 /* AppetizerModel.swift in Sources */,
+				99B8E1412CCC107E0020B9F8 /* Date+Extension.swift in Sources */,
 				99915AC02CB193C800DE1FD9 /* LoadingView.swift in Sources */,
 				99DC3A272CBFE5C80060E695 /* ImageCacheProtocol.swift in Sources */,
 				99915ACB2CB41B8400DE1FD9 /* AppetizerDetailsView.swift in Sources */,
@@ -520,6 +527,7 @@
 				99915AD92CB6E1F800DE1FD9 /* FormItem.swift in Sources */,
 				99915AB02CB00BD900DE1FD9 /* AccountView.swift in Sources */,
 				99915AC42CB19DCD00DE1FD9 /* RemoteImage.swift in Sources */,
+				99B8E1382CCBC7690020B9F8 /* AccountTextField.swift in Sources */,
 				99915ABB2CB17A1300DE1FD9 /* AppetizerListViewModel.swift in Sources */,
 				99DC3A2F2CC6E8F10060E695 /* UserStorage.swift in Sources */,
 				99915ACD2CB4345700DE1FD9 /* AppButton.swift in Sources */,

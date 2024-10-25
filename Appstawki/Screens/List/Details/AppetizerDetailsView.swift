@@ -34,9 +34,9 @@ struct AppetizerDetailsView: View {
                     .font(.body)
                     .padding()
                 HStack(spacing: 20) {
-                    ParameterView(name: "Calories", value: "\(item.calories)")
-                    ParameterView(name: "Carbs", value: "\(item.carbs)")
-                    ParameterView(name: "Protein", value: "\(item.protein)")
+                    ParameterView(name: "Calories", value: "\(item.calories) g")
+                    ParameterView(name: "Carbs", value: "\(item.carbs) g")
+                    ParameterView(name: "Protein", value: "\(item.protein) g")
                 }
             }
                 .padding()
