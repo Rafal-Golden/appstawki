@@ -1,6 +1,4 @@
-# README for AppStawki
-
-## Overview
+# AppStawki 🥟🫕
 
 **AppStawki** This simple appetizer service client written using SwiftUI framework. This application was designed to simulate the operation of a bar serving appetizers. The app provides a modern and responsive user interface, showcasing the capabilities of Apple's latest frameworks.
 
