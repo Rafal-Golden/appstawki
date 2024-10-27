@@ -36,7 +36,7 @@ struct MockData {
     
     static let orderItemOne     = genAppetizer(id: 0001, name: "Test Appetizer One")
     static let orderItemTwo     = genAppetizer(id: 0002, name: "Test Appetizer Two")
-    static let orderItemThree   = genAppetizer(id: 0003, name: "Test Appetizer Three")
+    static let orderItemThree   = genAppetizer(id: 0003, name: "Grilled Chicken Bites")
     
     static let orderItems       = [orderItemOne, orderItemTwo, orderItemThree]
 }
