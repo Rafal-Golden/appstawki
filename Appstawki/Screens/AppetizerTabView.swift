@@ -21,7 +21,7 @@ struct AppetizerTabView: View {
                 }
             AccountView()
                 .tabItem {
-                    Label("AccouontTab", systemImage: "person")
+                    Label("AccountTab", systemImage: "person")
                 }
             OrderView()
                 .tabItem { Label("OrderTab", systemImage: "bag") }

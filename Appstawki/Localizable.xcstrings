@@ -71,16 +71,6 @@
         }
       }
     },
-    "AccouontTab" : {
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Konto"
-          }
-        }
-      }
-    },
     "Add Order" : {
       "localizations" : {
         "pl" : {
