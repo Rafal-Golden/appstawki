@@ -19,7 +19,7 @@ This application serves as a practical example for developers looking to enhance
 
 ## Technologies Used
 
-- **SwiftUI**: User interface defined using declarative syntax.
-- **Swift Testing**: I wrote a few tests using new apple unit testing. An intuitive layout and seamless interactions with significantly less code compared to traditional UIKit approache. It also provides code example how to use UIKit view controller represented as view to handle backward compatibility scenario.
+- **SwiftUI**: User interface defined using declarative syntax. An intuitive layout and seamless interactions with significantly less code compared to traditional UIKit approache. It also provides code example how to use UIKit view controller represented as view to handle backward compatibility scenario.
+- **Swift Testing**: I wrote a few tests using new apple unit testing. 
 - **Nimble** Most of app unit test use nimbe to get nice and descriptive code.
 - **Snapshoot testing** There are 3 tests that verify appetisers list for state = {.loading, .success, .failed}
