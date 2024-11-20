@@ -6,7 +6,7 @@
 
 - **Modern Architecture**: It is an example how to use MVVM architecture.
 - **Unit Tests** Classes are covered by unit tests to present how screen logic can be verified using mocked data. 
-- **User Interface**: The app features a clean and intuitive UI built using SwiftUI, allowing for smooth navigation and interaction.
+- **User Interface**: The app features have clean and intuitive UI built using SwiftUI, allowing for smooth navigation and interaction.
 - **Localization**: Demonstrates how to implement localization using a string catalog, making it easy to adapt the application for different languages and regions.
 - **Appetizer Management**: Users can view, add, and manage various appetizers available at the bar.
 
